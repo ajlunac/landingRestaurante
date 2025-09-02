@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="assets/css/index.css">
+</head>
+<body>
+    <!-- Encabezado de la página con un título y subtitulo -->
+    <header>
+        <h1>La Belle Cuisini</h1>
+        <p>Experiencia gastronómica inolvidable.</p>
+    </header>
+
+    <!-- Barra de navegación del sitio -->
+    <nav>
+        <a href="../index.html">Inicio</a>
+        <a href="pages/menu.html">Menu</a>
+        <a href="reservaciones.html">Reservaciones</a>
+        <a href="contacto.html">Contacto</a>
+    </nav>
+    
+    <!-- Botones para el menú -->
+    <div class="container">
+
+        <!-- Contenedor principal -->
+        <h1>Nuestro Menú</h1>
+
+        <div class="menu-nav">
+            <button id="btnAll" class="menu-btn active" data-category="all">Todos</button>
+            <button id="btnEntradas" class="menu-btn" data-category="entradas">Entradas</button>
+            <button id="btnPlatosFuertes" class="menu-btn" data-category="platos-fuertes">Platos Fuertes</button>
+            <button id="btnPostres" class="menu-btn" data-category="postres">Postres</button>
+            <button id="btnBebidas" class="menu-btn" data-category="bebidas">Bebidas</button>
+        </div>
+
+        <!-- contenido principal del menú, se mostrará dinámicamente. -->
+        <div class="menu-contect" id="menuContent">
+            <!-- Sección de entradas. -->
+            <div id="entradas" class="menu-section active">
+                <h2>Entradas</h2>
+                <div class="menu-item">
+                    <img src="../assets/images/bruschetta.png" alt="Imagen de Bruschetta">
+                    <div class="menu-item-info">
+                        <h3>Bruschetta</h3>
+                        <p>Pan tostado con tomate, albahaca y aceite de oliva.</p>
+                        <span class="price">$12.000</span>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <img src="../assets/images/enalsada-caprese.png" alt="Imagen de Ensalada Caprese">
+                    <div class="menu-item-info">
+                        <h3>Ensalada Caprese</h3>
+                        <p>Tomate, mozzarella fresca, albahaca y reducción de balsámico.</p>
+                        <span class="price">$15.000</span>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <img src="../assets/images/sopa-tomate.png" alt="Imagen de Sopa de Tomate">
+                    <div class="menu-item-info">
+                        <h3>Sopa de Tomate</h3>
+                        <p>Deliciosa sopa cremosa de tomate con albahaca fresca.</p>
+                        <span class="price">$10.000</span>
+                    </div>
+            </div>
+        </div>
+
+
+
+
+    </div>
+
+
+    <!-- Pie de página con información de contacto -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Horario</h3>
+                <p>Lunes a Jueves: 12:00 - 22:00</p>
+                <p>Viernes a Sábado: 12:00 - 00:00</p>
+                <p>Domingo: 12:00 - 20:00</p>
+            </div>
+            <div class="footer-section">
+                <h3>Contacto</h3>
+                <p>Dirección: Calle falsa 123, Medellín, Antioquia</p>
+                <p>Teléfono: (+57) 321 4567</p>
+                <p>Email: info@labellecuisine.com</p>
+            </div>
+            <div class="footer-section">
+                <h3>Síguenos</h3>
+                <a href="#">Facebook</a>
+                <a href="#">Instagram</a>
+                <a href="#">X</a>
+                <a href="#">Tik Tok</a>
+                <a href="#">WhatsApp</a>
+            </div>
+        </div>
+
+        <p>&copy; La belle cuisine | Javier Luna</p>
+    </footer>
+    
+</body>
+</html>

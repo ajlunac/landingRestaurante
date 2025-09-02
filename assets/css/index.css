@@ -349,7 +349,8 @@ footer {
 .footer-section a {
     color: #bdc3c7;
     text-decoration: none;
-    margin-right: 1rem;
+    display: block;
+    margin-bottom: 0.5rem;
     transition: color 0.3s ease;
 }
 

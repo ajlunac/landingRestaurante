@@ -1,4 +1,4 @@
-## Estrctura básica de un proyecto web.
+## Directorio del proyecto
 
 mi-proyecto-web/
 ├── index.html
