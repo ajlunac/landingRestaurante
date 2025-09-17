@@ -3,47 +3,84 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Obtener todos los botones de categoría
     const menuButtons = document.querySelectorAll('.menu-btn');
-    //  Obetener las secciones del menú
+    // Obtener las secciones del menú
     const menuSections = document.querySelectorAll('.menu-section');
 
     // Función para mostrar una sección específica del menú
-    function showMenuSection(sectionId) {
+    function showMenuSection(category) {
 
-        // Ocultamos la sección del menú
-        menuSections.forEach(section => {
-            section.style.display = 'none';
-            section.classList.remove('active');
-        });
-
-        // Función para mostrar la sección seleccionada
-        const selectedSection = document.getElementById(sectionId);
-            if (selectedSection) {
-                selectedSection.style.display = 'block';
-                selectedSection.classList.add('active');
-        }
-
-        // Resaltar el botón activo
+        // Remover clase activa de todos los botones
         menuButtons.forEach(button => {
             button.classList.remove('active');
-
-            // Detectar si el ID corresponde a la sección seleccionada
-            const expectedButtonId = `btn${sectionId.charAt(0).toUpperCase() + sectionId.slice(1)}`;
-            if (button.id === expectedButtonId) {
-                button.classList.add('active');
-            }
         });
+
+        if (category === 'all') {
+            // Mostrar todas las secciones
+            menuSections.forEach(section => {
+                section.style.display = 'block';
+                section.classList.add('active');
+            });
+            
+            // Activar el botón "Todos"
+            const allButton = document.getElementById('btnAll');
+            if (allButton) {
+                allButton.classList.add('active');
+            }
+            
+        } else {
+            // Ocultar todas las secciones primero
+            menuSections.forEach(section => {
+                section.style.display = 'none';
+                section.classList.remove('active');
+            });
+
+            // Mostrar la sección seleccionada
+            let sectionToShow = null;
+            
+            // Mapear las categorías a los IDs correctos
+            switch(category) {
+                case 'entradas':
+                    sectionToShow = document.getElementById('entradas');
+                    break;
+                case 'platos-fuertes':
+                    sectionToShow = document.getElementById('platos-fuertes');
+                    break;
+                case 'postres':
+                    sectionToShow = document.getElementById('postres');
+                    break;
+                case 'bebidas':
+                    sectionToShow = document.getElementById('bebidas');
+                    break;
+                default:
+                    // Si no encuentra la categoría, intenta una conversión alternativa
+                    const alternativeId = category.replace(/-([a-z])/g, function(match, letter) {
+                        return letter.toUpperCase();
+                    });
+                    sectionToShow = document.getElementById(alternativeId);
+                    break;
+            }
+
+            if (sectionToShow) {
+                sectionToShow.style.display = 'block';
+                sectionToShow.classList.add('active');
+            }
+
+            // Activar el botón correspondiente
+            const activeButton = document.querySelector(`[data-category="${category}"]`);
+            if (activeButton) {
+                activeButton.classList.add('active');
+            }
+        }
     }
 
-    // Eventos de botones.
+    // Eventos de botones
     menuButtons.forEach(button => {
-
         button.addEventListener('click', function() {
-            const sectionId = this.id.replace('btn', '').toLowerCase();
-            showMenuSection(sectionId);        
+            const category = this.getAttribute('data-category');
+            showMenuSection(category);
         });
     });
 
-    showMenuSection('all'); // Mostrar la sección "Todos" por defecto
-    
-
+    // Mostrar todas las secciones por defecto al cargar la página
+    showMenuSection('all');
 });
