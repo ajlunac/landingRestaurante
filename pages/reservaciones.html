@@ -1,1 +1,170 @@
-<h2>En construcción...</h2>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>La Belle Cuisine Restaurante</title>
+    <link rel="stylesheet" href="../assets/css/reservaciones.css">
+</head>
+<body>
+    <!-- Encabezado de la página con un título y subtitulo -->
+    <header>
+        <h1>La Belle Cuisini</h1>
+        <p>Experiencia gastronómica inolvidable.</p>
+    </header>
+
+    <!-- Barra de navegación del sitio -->
+    <nav>
+        <a href="../index.html">Inicio</a>
+        <a href="../pages/menu.html">Menu</a>
+        <a href="../pages/reservaciones.html">Reservaciones</a>
+        <a href="../pages/contacto.html">Contacto</a>
+    </nav>
+
+    <!-- Contenido principal -->
+    <div class="container">
+
+        <h1>Reserva tu mesa</h1>
+        <p>Nos encantaría recibirte en nuestro restaurante, por favor complete el formulario</p>
+
+        <div class="reservation-form">
+
+            <form action="" id="reservationForm">
+
+                <div class="reservation-image">
+                <img src="../assets/images/reservaciones.png" alt="Imagen de reservaciones">
+                </div>
+
+                <!-- Grupos de campos: Formulario -->
+                <div class="form-group">
+                    <label for="nombre">Nombre: </label>
+                    <input type="text" name="nombre" id="nombre" required placeholder="Ingrese su nombre">
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email: </label>
+                    <input type="email" name="email" id="email" required placeholder="Ingrese su email">
+                </div>
+
+                <div class="form-group">
+                    <label for="telefono">Teléfono: </label>
+                    <input type="text" name="telefono" id="telefono" required placeholder="Ingrese su teléfono">
+                </div>
+                
+                <div class="form-group">
+                    <label for="fecha">Fecha: </label>
+                    <input type="date" name="fecha" id="fecha" required>
+                </div>
+
+                <!-- Grupos de campos: Horas -->
+                <div class="form-group">
+                    <label for="hora">Hora: </label>
+                    <select name="hora" id="hora" required>
+                        <option value="">Selecciona una hora</option>
+                        <option value="12:00">12:00</option>
+                        <option value="13:00">13:00</option>
+                        <option value="14:00">14:00</option>
+                        <option value="15:00">15:00</option>
+                        <option value="16:00">16:00</option>
+                        <option value="17:00">17:00</option>
+                        <option value="18:00">18:00</option>
+                        <option value="22:00">22:00</option>
+                    </select>
+                </div>
+
+                <!-- Grupos de campos: Personas -->
+                <div class="form-group">
+                    <label for="personas">Número de personas: </label>
+                    <select name="personas" id="personas" required>
+                        <option value="">Indicar el número de personas</option>
+                        <option value="1">1</option>    
+                        <option value="2">2</option>    
+                        <option value="3">3</option>    
+                        <option value="4">4</option>    
+                        <option value="5">5</option>    
+                        <option value="6">6</option>    
+                        <option value="7">7</option>    
+                        <option value="8">8</option>    
+                    </select>
+                </div>
+
+                <!-- Grupos de campos: Ocasión especial -->
+                <div class="form-group">
+                    <label for="ocasion">Ocasión especial (opcional): </label>
+                    <select name="ocasion" id="ocasion">
+                        <option value="">Seleccione una opción</option>
+                        <option value="ninguna">Ninguna</option>    
+                        <option value="cumpleanos">Cumpleaños</option>    
+                        <option value="aniversario">Aniversario</option>    
+                        <option value="celebracion-corporativa">Celebración corporativa</option>    
+                        <option value="otros">Otros</option>
+                    </select>    
+                </div>
+
+                <!-- Grupos de campos: Comentarios -->
+                <div class="form-group">
+                    <label for="comentarios">Comentarios adicionales (opcional): </label>
+                    <textarea name="comentarios" id="comentarios" rows="4" placeholder="Escribe tus comentarios aquí..."></textarea>
+                </div>
+
+                <button type="submit" id="btnSubmitReservation">Confirmar reservación</button>
+
+            </form>
+        </div>
+    </div>
+
+    <!-- Mensaje oculto por defecto -->
+    <div id="confirmationMessage" style="display: none;">
+        <h2>¡Gracias por tu reserva!</h2>
+        <p>Hemos recibido tu solicitud. Recibirás un correo electrónico de confirmación en breve</p>
+        <div id="reservationDetails">
+
+            <!-- JS rellena este espacio -->
+
+        </div>
+    </div>
+
+    <div class="reservation-info">
+        <h2>Información importante.</h2>
+        <ul>
+            <li>Las reservas deben realizarte con al menos 24 horas de anticipación.</li>
+            <li>Para grupos de más de 8 personas, por favor contactar al restaurante.</li>
+            <li>Si necesitan cancelar la reserva, te pedimos que los hagas con 12 horas de anticipación.</li>
+            <li>Para ocasiones especiles, pueden solicitar decoración adicional a la mesa con un cargo adicional.</li>
+        </ul>
+    </div>
+
+    
+
+    <!-- Pie de página con información de contacto -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Horario</h3>
+                <p>Lunes a Jueves: 12:00 - 22:00</p>
+                <p>Viernes a Sábado: 12:00 - 00:00</p>
+                <p>Domingo: 12:00 - 20:00</p>
+            </div>
+            <div class="footer-section">
+                <h3>Contacto</h3>
+                <p>Dirección: Calle falsa 123, Medellín, Antioquia</p>
+                <p>Teléfono: (+57) 321 4567</p>
+                <p>Email: info@labellecuisine.com</p>
+            </div>
+            <div class="footer-section">
+                <h3>Síguenos</h3>
+                <a href="#">Facebook</a>
+                <a href="#">Instagram</a>
+                <a href="#">X</a>
+                <a href="#">Tik Tok</a>
+                <a href="#">WhatsApp</a>
+            </div>
+        </div>
+
+        <p>&copy; La belle cuisine | Javier Luna</p>
+    </footer>
+
+    <script src="../assets/js/reservaciones.js"></script>
+
+</body>
+</html>
