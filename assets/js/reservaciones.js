@@ -41,7 +41,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 comentarios: document.getElementById('comentarios').value.trim()
             }
 
-            console.log('Datos del formulario:', formData); // Para depuración
+            // console.log('Datos del formulario:', formData); // Para depuración
 
             showConfirmation(formData);
         });
@@ -110,7 +110,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         function markValid(input) {
 
-            input.style.borderColor = 'green';
+            input.style.borderColor = '';
 
             const errorElement = input.parentElement.querySelector('.error-message');
 
@@ -120,6 +120,48 @@ document.addEventListener('DOMContentLoaded', function() {
 
             }
             
+        }
+
+        // Función para la confirmación y detalles de la reservación.
+        function showConfirmation(formData) {
+
+            if (reservationForm && confirmMessage && reservationDetail) {
+
+                reservationForm.style.display = 'none'; // Oculta el formulario
+
+                const fechaFormatted = new Date(formData.fecha).toLocaleDateString('es-ES', {
+                    weekday: 'long',
+                    year: 'numeric',
+                    month: 'long',
+                    day: 'numeric'
+                });
+
+                reservationDetail.innerHTML = `
+                    <div class  = "reservation-summary">
+                        <p><strong> Nombre: </strong> ${formData.nombre}</p>
+                        <p><strong> Fecha: </strong> ${fechaFormatted}</p>
+                        <p><strong> Hora: </strong> ${formData.hora}</p>
+                        <p><strong> Personas: </strong> ${formData.personas}</p>
+                        ${formData.ocasion ? `<p><strong> Ocasión: </strong> ${formData.ocasion}</p>` : ''}
+                        <p> Te hemos enviado un correo de confirmación a <strong> ${formData.email} </strong>. </p>
+                        <p> ¡Gracias por elegirnos! Esperamos verte pronto. </p>
+                        <button id="btnNuevaReserva"> Hacer otra reservación </button>
+                    </div>
+                        
+                `;
+                confirmMessage.style.display = 'block'; // Muestra el mensaje de confirmación
+                    
+                const btnNuevaReserva = document.getElementById('btnNuevaReserva');
+                if (btnNuevaReserva) {
+                    btnNuevaReserva.addEventListener('click', function() {
+                        reservationForm.reset(); // Resetea el formulario
+                        reservationForm.style.display = 'block'; // Muestra el formulario
+                        confirmMessage.style.display = 'none'; // Oculta el mensaje de confirmación
+                        reservationDetail.innerHTML = ''; // Limpia los detalles de la reservación
+                    });
+                }
+            }
+
         }
     }
 
