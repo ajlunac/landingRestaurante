@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>La Belle Cuisine Restaurante</title>
+    <title>Contacto - La Belle Cuisine Restaurante</title>
     <link rel="stylesheet" href="../assets/css/contacto.css">
 </head>
 <body>
@@ -23,7 +23,227 @@
 
     <!-- Contenido principal -->
     <div class="container">
-    
+        
+        <!-- Título principal -->
+        <h1>Contáctanos</h1>
+        <p class="subtitle">Estamos aquí para atenderte. Escríbenos y te responderemos lo antes posible.</p>
+
+        <!-- Grid de contacto: Formulario e Información -->
+        <div class="contact-grid">
+            
+            <!-- Formulario de contacto -->
+            <div class="contact-form-container">
+                <h2>Envíanos un mensaje</h2>
+                
+                <form id="contactForm" class="contact-form">
+                    
+                    <!-- Nombre completo -->
+                    <div class="form-group">
+                        <label for="nombre">Nombre completo:</label>
+                        <input 
+                            type="text" 
+                            id="nombre" 
+                            name="nombre" 
+                            placeholder="Ingresa tu nombre completo"
+                            required
+                        >
+                    </div>
+
+                    <!-- Email -->
+                    <div class="form-group">
+                        <label for="email">Correo electrónico:</label>
+                        <input 
+                            type="email" 
+                            id="email" 
+                            name="email" 
+                            placeholder="tu@email.com"
+                            required
+                        >
+                    </div>
+
+                    <!-- Teléfono -->
+                    <div class="form-group">
+                        <label for="telefono">Teléfono:</label>
+                        <input 
+                            type="tel" 
+                            id="telefono" 
+                            name="telefono" 
+                            placeholder="(+57) 300 123 4567"
+                            required
+                        >
+                    </div>
+
+                    <!-- Asunto -->
+                    <div class="form-group">
+                        <label for="asunto">Asunto:</label>
+                        <select id="asunto" name="asunto" required>
+                            <option value="">Selecciona un asunto</option>
+                            <option value="consulta-general">Consulta general</option>
+                            <option value="reservacion">Reservación</option>
+                            <option value="eventos-privados">Eventos privados</option>
+                            <option value="sugerencias">Sugerencias</option>
+                            <option value="quejas">Quejas o reclamos</option>
+                            <option value="trabajar-con-nosotros">Trabajar con nosotros</option>
+                            <option value="otros">Otros</option>
+                        </select>
+                    </div>
+
+                    <!-- Mensaje -->
+                    <div class="form-group">
+                        <label for="mensaje">Mensaje:</label>
+                        <textarea 
+                            id="mensaje" 
+                            name="mensaje" 
+                            rows="6" 
+                            placeholder="Escribe tu mensaje aquí..."
+                            required
+                        ></textarea>
+                    </div>
+
+                    <!-- Checkbox de términos -->
+                    <div class="form-group-checkbox">
+                        <input 
+                            type="checkbox" 
+                            id="terminos" 
+                            name="terminos" 
+                            required
+                        >
+                        <label for="terminos">
+                            Acepto la política de privacidad y el tratamiento de mis datos personales.
+                        </label>
+                    </div>
+
+                    <!-- Botón de envío -->
+                    <button type="submit" id="btnEnviar" class="btn-submit">
+                        Enviar mensaje
+                    </button>
+
+                </form>
+
+                <!-- Mensaje de confirmación (oculto por defecto) -->
+                <div id="mensajeConfirmacion" class="mensaje-confirmacion" style="display: none;">
+                    <h3>¡Mensaje enviado con éxito!</h3>
+                    <p>Gracias por contactarnos. Responderemos tu mensaje a la brevedad posible.</p>
+                    <button id="btnNuevoMensaje" class="btn-nuevo-mensaje">
+                        Enviar otro mensaje
+                    </button>
+                </div>
+            </div>
+
+            <!-- Información de contacto -->
+            <div class="contact-info-container">
+                
+                <!-- Información principal -->
+                <div class="info-card">
+                    <h2>Información de contacto</h2>
+                    
+                    <div class="info-item">
+                        <div class="info-icon" id="iconDireccion">📍</div>
+                        <div class="info-content">
+                            <h3>Dirección</h3>
+                            <p>Calle falsa 123</p>
+                            <p>Medellín, Antioquia, Colombia</p>
+                        </div>
+                    </div>
+
+                    <div class="info-item">
+                        <div class="info-icon" id="iconTelefono">📞</div>
+                        <div class="info-content">
+                            <h3>Teléfono</h3>
+                            <p>(+57) 321 4567</p>
+                            <p>Lunes a Domingo: 12:00 - 22:00</p>
+                        </div>
+                    </div>
+
+                    <div class="info-item">
+                        <div class="info-icon" id="iconEmail">✉️</div>
+                        <div class="info-content">
+                            <h3>Email</h3>
+                            <p>info@labellecuisine.com</p>
+                            <p>reservas@labellecuisine.com</p>
+                        </div>
+                    </div>
+
+                    <div class="info-item">
+                        <div class="info-icon" id="iconHorario">🕐</div>
+                        <div class="info-content">
+                            <h3>Horario de atención</h3>
+                            <p>Lunes a Jueves: 12:00 - 22:00</p>
+                            <p>Viernes a Sábado: 12:00 - 00:00</p>
+                            <p>Domingo: 12:00 - 20:00</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Redes sociales -->
+                <div class="social-card">
+                    <h3>Síguenos en redes sociales</h3>
+                    <div class="social-links">
+                        <a href="#" class="social-link" id="socialFacebook" data-network="facebook">
+                            <span class="social-icon">📘</span>
+                            <span class="social-name">Facebook</span>
+                        </a>
+                        <a href="#" class="social-link" id="socialInstagram" data-network="instagram">
+                            <span class="social-icon">📷</span>
+                            <span class="social-name">Instagram</span>
+                        </a>
+                        <a href="#" class="social-link" id="socialX" data-network="x">
+                            <span class="social-icon">✖️</span>
+                            <span class="social-name">X (Twitter)</span>
+                        </a>
+                        <a href="#" class="social-link" id="socialTiktok" data-network="tiktok">
+                            <span class="social-icon">🎵</span>
+                            <span class="social-name">TikTok</span>
+                        </a>
+                        <a href="#" class="social-link" id="socialWhatsapp" data-network="whatsapp">
+                            <span class="social-icon">💬</span>
+                            <span class="social-name">WhatsApp</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Mapa (placeholder para futuro mapa interactivo) -->
+                <div class="map-card">
+                    <h3>Encuéntranos</h3>
+                    <div id="mapa" class="map-placeholder">
+                        <p>📍 Mapa interactivo</p>
+                        <p class="map-text">Calle falsa 123, Medellín, Antioquia</p>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- Sección de preguntas frecuentes -->
+        <div class="faq-section">
+            <h2>Preguntas frecuentes</h2>
+            <div class="faq-grid">
+                
+                <div class="faq-item" id="faq1">
+                    <h3 class="faq-question">¿Cuál es el tiempo de respuesta?</h3>
+                    <p class="faq-answer">Respondemos todos los mensajes en un plazo máximo de 24 horas hábiles.</p>
+                </div>
+
+                <div class="faq-item" id="faq2">
+                    <h3 class="faq-question">¿Puedo hacer reservaciones por este medio?</h3>
+                    <p class="faq-answer">Sí, puedes solicitar reservaciones. Sin embargo, te recomendamos usar nuestro formulario especializado en la sección de Reservaciones.</p>
+                </div>
+
+                <div class="faq-item" id="faq3">
+                    <h3 class="faq-question">¿Organizan eventos privados?</h3>
+                    <p class="faq-answer">Sí, contamos con espacios para eventos privados. Contáctanos para conocer disponibilidad y cotizaciones.</p>
+                </div>
+
+                <div class="faq-item" id="faq4">
+                    <h3 class="faq-question">¿Tienen servicio a domicilio?</h3>
+                    <p class="faq-answer">Actualmente estamos evaluando este servicio. Contáctanos para más información sobre opciones de entrega.</p>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
 
     <!-- Pie de página con información de contacto -->
     <footer>
